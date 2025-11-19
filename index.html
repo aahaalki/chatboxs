@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AA AI Chat Bot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="title-block">
+        <p class="eyebrow">AA Labs</p>
+        <h1>~RANA[HELP]
+
+
+        </h1>
+        <p class="lede">Ask anything and get instant answers powered by a lightweight client-side assistant.</p>
+      </div>
+      <div class="badge">Alpha</div>
+    </header>
+
+    <section class="chat-card">
+      <form id="apiKeyForm" class="api-key-form" autocomplete="off">
+        <div class="api-key-header">
+          <label for="apiKeyInput">Gemini API key</label>
+          <p class="api-key-note">Stored locally in this browser only.</p>
+        </div>
+        <div class="api-key-controls">
+          <input
+            id="apiKeyInput"
+            class="api-key-input"
+            type="password"
+            name="apiKey"
+            placeholder="Paste your Gemini API key"
+            spellcheck="false"
+          />
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" id="clearApiKey" class="btn btn-secondary">Clear</button>
+        </div>
+        <p id="apiKeyStatus" class="api-key-status" role="status" aria-live="polite" hidden></p>
+      </form>
+      <div id="chatLog" class="chat-log" aria-live="polite"></div>
+      <form id="chatForm" class="composer" autocomplete="off">
+        <input
+          id="userInput"
+          class="composer-input"
+          type="text"
+          name="message"
+          placeholder="Ask me anything..."
+          required
+        />
+        <button type="submit" class="composer-btn" aria-label="Send message">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <template id="chatBubbleTemplate">
+    <article class="bubble">
+      <div class="avatar" aria-hidden="true"></div>
+      <div class="bubble-body">
+        <header class="bubble-meta">
+          <span class="bubble-name"></span>
+          <time class="bubble-time"></time>
+        </header>
+        <p class="bubble-text"></p>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
