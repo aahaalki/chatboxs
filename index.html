@@ -479,20 +479,13 @@
       const conversation = [];
 
       
-        apiKey = value;
-        localStorage.setItem("gemini_api_key", value);
-        apiKeyInput.value = value.replace(/.(?=.{4})/g, "•");
-        alert("API key saved only in this browser.");
-      });
+        
 
       chatForm.addEventListener("submit", async (event) => {
         event.preventDefault();
         const prompt = promptInput.value.trim();
         if (!prompt) return;
-        if (!apiKey) {
-          alert("Paste and save your Gemini API key first.");
-          return;
-        }
+        
 
         addMessage("user", prompt);
         promptInput.value = "";
@@ -597,6 +590,7 @@
     </script>
   </body>
 </html>
+
 
 
 
