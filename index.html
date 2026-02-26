@@ -462,8 +462,7 @@
     </div>
 
     <script>
-      const apiKeyInput = document.getElementById("apiKeyInput");
-      const saveKeyBtn = document.getElementById("saveKeyBtn");
+      
       const chatForm = document.getElementById("chatForm");
       const promptInput = document.getElementById("promptInput");
       const chatLog = document.getElementById("chatLog");
@@ -471,10 +470,9 @@
 
       const MODEL = "gemini-2.5-flash";
 
-      let apiKey = localStorage.getItem("gemini_api_key") || "AIzaSyDLlMWSNdTgrycGooq708eNp2MT3AKmgVI";
+      let apiKey = localStorage.getItem("gemini_api_key") || "AIzaSyDQOaHJBhQg8x99lGnHIwvgHJGXMw6sWnw";
       if (apiKey) {
-        apiKeyInput.value = apiKey.replace(/.(?=.{4})/g, "•");
-      }
+        
 
       const conversation = [];
 
@@ -602,6 +600,7 @@
     </script>
   </body>
 </html>
+
 
 
 
